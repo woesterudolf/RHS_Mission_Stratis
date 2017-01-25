@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=222;
+		nextID=223;
 	};
 	class Camera
 	{
-		pos[]={6360.2046,31.973028,5496.8862};
-		dir[]={0.69394952,-0.51608497,0.50226825};
-		up[]={0.41809854,0.85651237,0.30261111};
-		aside[]={0.58636922,-4.8661605e-008,-0.81014657};
+		pos[]={6503.9482,84.346428,5406.1797};
+		dir[]={-0.81940389,-0.51438421,0.25297311};
+		up[]={-0.49149674,0.85755843,0.15173833};
+		aside[]={0.29499123,1.1910743e-008,0.95550615};
 	};
 };
 binarizationWanted=0;
@@ -26,13 +26,14 @@ addons[]=
 	"A3_Boat_F_Boat_Transport_01",
 	"rhsusf_c_statics",
 	"RHS_US_A2_AirImport",
-	"rhsusf_c_m1a1"
+	"rhsusf_c_m1a1",
+	"A3_Structures_F_Exp_Industrial_SugarCaneFactory_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="rhsusf_c_troops";
@@ -75,6 +76,13 @@ class AddonsMetaData
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
+		class Item6
+		{
+			className="A3_Structures_F_Exp_Industrial";
+			name="Arma 3 Apex - Industrial Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
 	};
 };
 randomSeed=14922911;
@@ -104,7 +112,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			dataType="Group";
@@ -1683,6 +1691,24 @@ class Mission
 			description="31966,  32009, 31939";
 			id=219;
 			atlOffset=3.0517578e-005;
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6422.5361,20.483871,5428.897};
+				angles[]={0,3.8448207,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="deleteMe";
+			};
+			id=222;
+			type="Land_SCF_01_crystallizerTowers_F";
+			atlOffset=-0.0029997826;
 		};
 	};
 };
