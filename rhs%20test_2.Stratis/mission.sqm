@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=349;
+		nextID=408;
 	};
 	class Camera
 	{
-		pos[]={7105.3672,361.63889,6123.5693};
-		dir[]={-0.50955933,-0.64599425,-0.56856};
-		up[]={-0.43117791,0.7632795,-0.48110354};
-		aside[]={-0.74479544,1.7990533e-006,0.66751283};
+		pos[]={5211.9658,320.1543,5021.3789};
+		dir[]={0.61525142,-0.71399182,0.33456022};
+		up[]={0.62732553,0.69995511,0.34112117};
+		aside[]={0.47778332,-8.8724482e-007,-0.87865216};
 	};
 };
 binarizationWanted=0;
@@ -36,13 +36,18 @@ addons[]=
 	"rhsusf_c_troops",
 	"A3_Characters_F",
 	"rhsusf_c_statics",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Soft_F_MRAP_02",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Soft_F_EPC_Truck_03",
+	"rhs_c_troops",
+	"rhs_c_a2port_air"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=18;
 		class Item0
 		{
 			className="rhsusf_c_m113";
@@ -133,6 +138,41 @@ class AddonsMetaData
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
+		};
+		class Item13
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item15
+		{
+			className="A3_Soft_F_EPC";
+			name="Arma 3 Win Episode - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item16
+		{
+			className="rhs_c_troops";
+			name="AFRF Infantry & Equipment";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item17
+		{
+			className="rhs_c_a2port_air";
+			name="A2 ported air";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -357,7 +397,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=58;
 		class Item0
 		{
 			dataType="Object";
@@ -809,7 +849,7 @@ class Mission
 			};
 			id=251;
 			type="Land_Net_Fence_8m_F";
-			atlOffset=118.76518;
+			atlOffset=118.76517;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2025,6 +2065,1145 @@ class Mission
 			};
 			id=347;
 			atlOffset=-0.00099945068;
+		};
+		class Item38
+		{
+			dataType="Trigger";
+			position[]={6758.6172,0.00037384033,6235.7231};
+			class Attributes
+			{
+				name="missionBeginning";
+				condition="true";
+				onActivation="missionStatus = ""inProgress""; publicVariable ""missionStatus""; phase1Status = ""inProgress""; publicVariable ""phase1Status""; phase2Status = ""inProgress""; publicVariable ""phase2Status""; phase3Status = ""inProgress""; publicVariable ""phase3Status""; kaminoCleared = ""false""; publicVariable ""kaminoCleared""; kaminoCounterStatus = ""inProgress""; publicVariable ""kaminoCounterStatus""; radioTowersStatus = ""inProgress""; publicVariable ""radioTowersStatus""; radioCounterStatus = ""inProgress""; publicVariable ""radioCounterStatus""; kaminoCounterHeloStatus = ""inProgress""; publicVariable ""kaminoCounterHeloStatus"";";
+				sizeA=0;
+				sizeB=0;
+				isServerOnly=1;
+			};
+			id=349;
+			type="EmptyDetector";
+			atlOffset=38.121998;
+		};
+		class Item39
+		{
+			dataType="Trigger";
+			position[]={6418.3672,7.9384494,5399.9429};
+			class Attributes
+			{
+				name="kaminoClearedTrue";
+				onActivation="kaminoCleared = ""true""; publicVariable ""kaminoCleared""; hint ""Kamino Firing Range is cleared."";";
+				sizeA=250;
+				sizeB=250;
+				activationType="NOT PRESENT";
+				activationBy="EAST";
+				isServerOnly=1;
+			};
+			id=350;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item40
+		{
+			dataType="Trigger";
+			position[]={5511.6831,116.95132,5570.2012};
+			class Attributes
+			{
+				name="kaminoCounterStatusCounterFailed";
+				condition="!alive tokenRogainDude";
+				onActivation="kaminoCounterStatus = ""counterFailed""; publicVariable ""kaminoCounterStatus""; hint ""Kamino motorized counter attack is destroyed."";";
+				sizeA=0;
+				sizeB=0;
+				isServerOnly=1;
+			};
+			id=351;
+			type="EmptyDetector";
+			atlOffset=0.0059967041;
+		};
+		class Item41
+		{
+			dataType="Trigger";
+			position[]={6408.6602,11.454119,5303.4751};
+			class Attributes
+			{
+				name="kaminoBluforDetected";
+				sizeA=250;
+				sizeB=250;
+				activationType="EAST D";
+				activationBy="WEST";
+				type="SWITCH";
+				isServerOnly=1;
+			};
+			id=352;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item42
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=9;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5024.4512,208.82079,5923.0142};
+						angles[]={6.278182,0,0.0099949092};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=362;
+					type="O_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5024.4229,211.6134,5922.998};
+						angles[]={6.2781763,0,0.010000736};
+					};
+					side="East";
+					class Attributes
+					{
+						name="tokenRogainDude";
+					};
+					id=363;
+					type="O_Soldier_F";
+					atlOffset=2.7929993;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5019.4512,208.65347,5918.0142};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=364;
+					type="O_Soldier_AR_F";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5019.4512,208.65347,5918.0142};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=365;
+					type="O_Soldier_AT_F";
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					position[]={5010.3672,208.51047,5914.1777};
+					type="Hold";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=355;
+					atlOffset=-1.5258789e-005;
+				};
+				class Item5
+				{
+					dataType="Waypoint";
+					position[]={5083.6655,163.3515,5752.0225};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=356;
+					type="Move";
+					atlOffset=-0.00091552734;
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					position[]={5320.6377,151.92316,5761.9971};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=357;
+					type="Move";
+					atlOffset=0.00091552734;
+				};
+				class Item7
+				{
+					dataType="Waypoint";
+					position[]={5707.0654,100.7403,5287.3467};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=358;
+					type="Move";
+					atlOffset=0.00032043457;
+				};
+				class Item8
+				{
+					dataType="Waypoint";
+					position[]={6434.731,7.99646,5388.2651};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=359;
+					type="Move";
+					atlOffset=-0.00022602081;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=362;
+						item1=361;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=363;
+						item1=361;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=353;
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5024.4233,211.61171,5922.9482};
+				angles[]={6.278182,0,0.0099949092};
+			};
+			side="East";
+			flags=4;
+			class Attributes
+			{
+				rank="SERGEANT";
+			};
+			id=361;
+			type="O_MRAP_02_gmg_F";
+		};
+		class Item44
+		{
+			dataType="Trigger";
+			position[]={5329.561,218.07649,5063.02};
+			class Attributes
+			{
+				name="radioTowersStatusDestroyed";
+				condition="!alive targetTower1 && !alive TargetTower2 && !alive targetTower3";
+				onActivation="radioTowersStatus = ""completed""; publicVariable ""radioTowersDestroyed""; hint ""The radio towers have been destroyed."";";
+				sizeA=0;
+				sizeB=0;
+				isServerOnly=1;
+			};
+			id=366;
+			type="EmptyDetector";
+		};
+		class Item45
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5265.0371,218.95724,5069.8647};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=368;
+					type="B_soldier_exp_F";
+					atlOffset=0.0010070801;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=367;
+			atlOffset=0.0010070801;
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5227.2212,223.26923,5013.2432};
+				angles[]={6.2806892,0,0.0050090947};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="targetTower2 = (nearestObjects [radioPad2,[""Land_TTowerBig_1_F""],20]) select 0;";
+				name="radioPad2";
+			};
+			id=369;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item47
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5274.8501,218.6904,5067.0562};
+				angles[]={0.012496558,0,6.2756982};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="targetTower1 = (nearestObjects [radioPad1,[""Land_TTowerBig_2_F""],30]) select 0;";
+				name="radioPad1";
+			};
+			id=370;
+			type="Land_HelipadEmpty_F";
+			atlOffset=-1.5258789e-005;
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5181.7979,222.98,4992.564};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="targetTower3 = (nearestObjects [radioPad3,[""Land_TTowerBig_2_F""],30]) select 0;";
+				name="radioPad3";
+			};
+			id=371;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item49
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=17;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4339.1479,224.05717,3787.9551};
+						angles[]={6.2706885,4.3081355,0.097197384};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						name="tokenMikeDude";
+					};
+					id=374;
+					type="O_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4337.1816,224.25293,3792.5522};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=375;
+					type="O_Soldier_SL_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4339.0205,224.4686,3793.3389};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=376;
+					type="O_Soldier_F";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4340.8594,224.71466,3794.1257};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=377;
+					type="O_Soldier_LAT_F";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4342.6982,224.97127,3794.9124};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=378;
+					type="O_soldier_M_F";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4344.5371,225.17618,3795.699};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=379;
+					type="O_Soldier_TL_F";
+					atlOffset=1.5258789e-005;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4346.376,225.34338,3796.4856};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=380;
+					type="O_Soldier_AR_F";
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4348.4702,224.93567,3786.5049};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=381;
+					type="O_Soldier_A_F";
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4350.3091,225.11441,3787.2915};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=382;
+					type="O_medic_F";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4341.1152,224.23431,3783.3584};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=383;
+					type="O_Soldier_TL_F";
+					atlOffset=1.5258789e-005;
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4342.9541,224.46188,3784.145};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=384;
+					type="O_Soldier_AR_F";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4344.7925,224.66783,3784.9316};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=385;
+					type="O_Soldier_GL_F";
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4346.6313,224.82263,3785.7183};
+						angles[]={0,4.3081441,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=386;
+					type="O_Soldier_LAT_F";
+				};
+				class Item13
+				{
+					dataType="Waypoint";
+					position[]={4336.9946,223.83449,3784.4653};
+					type="Hold";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=387;
+					atlOffset=-6.1035156e-005;
+				};
+				class Item14
+				{
+					dataType="Waypoint";
+					position[]={4288.6689,210.81104,3717.105};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=388;
+					type="Move";
+					atlOffset=-6.1035156e-005;
+				};
+				class Item15
+				{
+					dataType="Waypoint";
+					position[]={4207.3252,206.61545,3966.1272};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=389;
+					type="Move";
+					atlOffset=-0.00073242188;
+				};
+				class Item16
+				{
+					dataType="Waypoint";
+					position[]={6467.2349,12.398773,5325.439};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=390;
+					type="Move";
+					atlOffset=-0.00042819977;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=374;
+						item1=373;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=372;
+			atlOffset=-0.011260986;
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4339.1001,226.46582,3787.7354};
+				angles[]={6.2706842,4.3081441,0.09719272};
+			};
+			side="East";
+			flags=6;
+			class Attributes
+			{
+				rank="SERGEANT";
+			};
+			id=373;
+			type="O_Truck_03_transport_F";
+			atlOffset=-0.011260986;
+		};
+		class Item51
+		{
+			dataType="Trigger";
+			position[]={5323.499,201.36839,4931.6621};
+			class Attributes
+			{
+				name="radioCounterStatusDestroyed";
+				condition="!alive tokenMikeDude";
+				onActivation="radioCounterStatus = ""completed""; publicVariable ""radioCounterStatus""; hint ""Counter Attack from AirBase Mike is destroyed."";";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=391;
+			type="EmptyDetector";
+		};
+		class Item52
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=7;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1826.86,5.5014391,5687.8926};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						name="counterAttackHelo1D";
+					};
+					id=395;
+					type="rhs_pilot_combat_heli";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1826.86,5.5014391,5687.8926};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						name="counterAttackHelo1G";
+					};
+					id=396;
+					type="rhs_pilot_combat_heli";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1831.535,5.5014391,5665.7036};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						name="counterAttackHelo2D";
+					};
+					id=399;
+					type="rhs_pilot_combat_heli";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1831.535,5.5014391,5665.7036};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						name="counterAttackHelo2G";
+					};
+					id=400;
+					type="rhs_pilot_combat_heli";
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					position[]={1826.86,6,5687.8428};
+					type="Hold";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=401;
+					atlOffset=0.5;
+					class AttachedTo
+					{
+						id=394;
+						offset[]={0,0.5,0};
+					};
+				};
+				class Item5
+				{
+					dataType="Waypoint";
+					position[]={5371.7598,188.41385,5362.29};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=402;
+					type="Move";
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					position[]={6240.1572,24.434814,5164.876};
+					type="SeekAndDestroy";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=403;
+					atlOffset=0.0017604828;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=4;
+				};
+				class Links
+				{
+					items=4;
+					class Item0
+					{
+						linkID=0;
+						item0=395;
+						item1=394;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=396;
+						item1=394;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=399;
+						item1=398;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=400;
+						item1=398;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=393;
+		};
+		class Item53
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1826.8599,8.1295795,5687.6504};
+			};
+			side="East";
+			flags=6;
+			class Attributes
+			{
+				name="counterAttackHelo1";
+			};
+			id=394;
+			type="RHS_Mi24V_vdv";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalNumber_type";
+					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="NoChange";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item54
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1831.535,7.5332093,5665.6182};
+			};
+			side="East";
+			flags=4;
+			class Attributes
+			{
+				name="counterAttackHelo2";
+			};
+			id=398;
+			type="RHS_Ka52_vvs";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalNumber_type";
+					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRKA52NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="NoChange";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item55
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6419.5679,8.0014391,5386.3096};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						name="tokenKaminoDude";
+					};
+					id=405;
+					type="rhs_msv_rifleman";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=404;
+		};
+		class Item56
+		{
+			dataType="Trigger";
+			position[]={1866.9741,4.0675974,6239.5063};
+			class Attributes
+			{
+				name="counterAttackHelosDebugDELETEME";
+				text="Destroy Counter Attack Helos";
+				onActivation="counterAttackHelo1 setDamage 1; counterAttackHelo2 setDamage 1;";
+				sizeA=0;
+				sizeB=0;
+				activationBy="ALPHA";
+			};
+			id=406;
+			type="EmptyDetector";
+		};
+		class Item57
+		{
+			dataType="Trigger";
+			position[]={1989.432,5.4821,5905.502};
+			class Attributes
+			{
+				name="kaminoCounterHeloStatusDestroyed";
+				condition="!alive counterAttackHelo1 && !alive counterAttackHelo2";
+				onActivation="kaminoCounterHeloStatus = ""completed""; publicVariable ""kaminoCounterHeloStatus""; hint ""Counter Attack Helos are destroyed."";";
+				sizeA=0;
+				sizeB=0;
+				isServerOnly=1;
+			};
+			id=407;
+			type="EmptyDetector";
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=3;
+		};
+		class Links
+		{
+			items=3;
+			class Item0
+			{
+				linkID=0;
+				item0=352;
+				item1=355;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=352;
+				item1=387;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=352;
+				item1=401;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
+			};
 		};
 	};
 };
