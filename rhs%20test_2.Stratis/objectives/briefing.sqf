@@ -2,64 +2,61 @@ if(!isServer) exitWith{};
 
 [     
     {true},        
-        ["Task1", //Task ID
-		"Complete Phase 1.", //Long Description        
-		"Phase 1",//Task title in Briefing			
-		"Phase 1",//Task marker on map hover over text
-		objNull,//Location can be object or marker (OPTIONAL)	
-		"created", //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)		
-		"move1" //icon. https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul
-		],
-		
-			[["Task1_1", "Task1"],//Task ID
-			"Kamino Firing range",//Long Description
-			"Kamino",//Task title in Briefing
-			"Destroy",//Task marker on map hover over text
-			objNull,//Location can be object or marker (OPTIONAL)
-			"created",//task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
-			"attack" //icon. https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul
-			],
-				[["Task1_1_1", "Task1_1"],//Task ID
-				"Kamino Firing range",//Long Description
-				"Kamino",//Task title in Briefing
-				"Destroy",//Task marker on map hover over text
-				objNull,//Location can be object or marker (OPTIONAL)
-				"created",//task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
-				"attack" //icon. https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul
-				],
-				
-		["Task2", //Task ID
-		"Complete Phase 2.", //Long Description        
-		"Phase 2",//Task title in Briefing			
-		"Phase 2",//Task marker on map hover over text
-		objNull,//Location can be object or marker (OPTIONAL)	
-		"created", //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)		
-		"move2" //icon. https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul
-		],
-		
-		["Task3", //Task ID
-		"Complete Phase 3.", //Long Description        
-		"Phase 3",//Task title in Briefing			
-		"Phase 3",//Task marker on map hover over text
-		objNull,//Location can be object or marker (OPTIONAL)	
-		"created", //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)		
-		"move3" //icon. https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul
-		]
+        ["Task1",                                                                                   //Task ID
+		"Destroy the guarding armored personnel carrier at the power station.",     					//Long Description
+        "Search and Destroy",                                                                              //Task title in Briefing
+        "Destroy",                                                                              //Task marker on map hover over text        getMarkerPos  "mrk_obj1",                                                                       //Location can be object or marker (OPTIONAL)
+        objNull,                                                                       //Location can be object or marker (OPTIONAL)
+        "created"                                                                                  //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
+        ]
+] call FHQ_fnc_ttAddTasks;
+
+[     
+    {true},        
+        ["Task2",                                                                                   //Task ID
+        "Destroy the guarding main battle tank at the power station.",     					//Long Description
+        "Search and Destroy",                                                                              //Task title in Briefing
+        "Destroy",                                                                              //Task marker on map hover over text
+        objNull,                                                                       //Location can be object or marker (OPTIONAL)
+        "created"                                                                                  //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
+        ]
+] call FHQ_fnc_ttAddTasks;
+
+[     
+    {true},        
+        ["Task3",                                                                                   			//Task ID
+        "Destroy the guarding main battle tank at the power station.",     					//Long Description
+        "Search and Destroy",                                                                              //Task title in Briefing
+        "Destroy",                                                                              //Task marker on map hover over text
+        objNull,                                                                       //Location can be object or marker (OPTIONAL)
+        "created"                                                                                  //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
+        ]
+] call FHQ_fnc_ttAddTasks;
+
+[     
+    {true},        
+        ["Task4",                                                                                   //Task ID
+		"Destroy the guarding armored personnel carrier at the power station.",     					//Long Description
+        "Search and Destroy",                                                                              //Task title in Briefing
+        "Destroy",                                                                              //Task marker on map hover over text        getMarkerPos  "mrk_obj1",                                            
+        objNull,                                                                       //Location can be object or marker (OPTIONAL)
+        "created"                                                                                  //task state.  "created", "assigned", "succeeded", "failed", or "canceled". (OPTIONAL)
+        ]
 ] call FHQ_fnc_ttAddTasks;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [
 {true}, // for all playable units
 ["Diary", "SITUATION", 
-"Situation briefing here."
+"You are part of a direct action armored task force heading to the power station installation on the NorthEasrtern Altis. Recent intel suggested increased activity near the AO forcing NATO to send in intercepting force."
 ],
 
 ["Diary", "MISSION", 
-"Describe the mission here"
+"Move into the AO and complete the tasks as stated. Destroy the guarding armors. Move in and capture the facility."
 ],
 
 ["Diary", "INTEL",
-"Any kind of Intel?"
+"UAV shows 2 pieces of main battle tanks and two mechanized squads guarding the facility. Infantry troops were dropped off yesterday to further garrison the facility along with AAA armors. Whatever they are doing, they are spending quite a bit of hardware to defend it."
 ],
 
 ["Diary", "Win/Lose",
@@ -74,12 +71,10 @@ Loss condition: Lose both of the friendly tanks.
 <br/>
 Loss condition: Casualty number exceeds allowed tickets (30)."
 ],
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ["Credits", "Mission by", 
-"Mission by TacticalGamer projects team for TacticalGamer.com community.
-<br/>
-<br/>
-Unkl, B, CapShawn, DMZ_Scount, BadStache, woesterrudolf, Xorriliz... who else?
+"Mission by B for TacticalGamer community. Feel free to re-imagine, refine.
 <br/>
 <br/>
 Check out our forums for more information as we provide the best teamplay friendly environment.
@@ -100,8 +95,11 @@ Champ - View Distance script.
 <br/>
 Varanon - TaskTracker."
 ],
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ["Game-play Hints", "Group Manager",
 "Team management script is in usage. To access: press team switch (Default: ""U"")."
+],       
+
+["Game-play Hints", "Squad Name-tags",
+"Name-Tag script is active. Press NUMPAD DEL(.) (Keybinding: Tactical View) to see the names of your squad-mates. Leaders are able to other leaders as well."
 ]
 ] call FHQ_fnc_ttAddBriefing;
