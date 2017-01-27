@@ -8,14 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=408;
+		nextID=410;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class Camera
 	{
-		pos[]={7301.0313,16.469343,7850.9438};
-		dir[]={0.82508373,-0.4024508,0.39683518};
-		up[]={0.36273912,0.91541767,0.17446336};
-		aside[]={0.43348396,3.9975566e-007,-0.90129375};
+		pos[]={5412.084,327.49606,4986.752};
+		dir[]={-0.51299608,-0.46681678,0.72046953};
+		up[]={-0.27078518,0.88432312,0.38029763};
+		aside[]={0.81466275,-3.3294782e-007,0.5800674};
 	};
 };
 binarizationWanted=0;
@@ -41,13 +45,15 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Soft_F_EPC_Truck_03",
 	"rhs_c_troops",
-	"rhs_c_a2port_air"
+	"rhs_c_a2port_air",
+	"A3_Ui_F",
+	"A3_Structures_F_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			className="rhsusf_c_m113";
@@ -173,6 +179,13 @@ class AddonsMetaData
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item18
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
 		};
 	};
 };
@@ -418,7 +431,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=58;
+		items=60;
 		class Item0
 		{
 			dataType="Object";
@@ -637,7 +650,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7306.7397,128.21832,7860.6567};
+				position[]={7306.7397,74.764709,7860.6567};
 				angles[]={0,2.3778539,0};
 			};
 			side="Empty";
@@ -648,7 +661,7 @@ class Mission
 			};
 			id=226;
 			type="Land_Loudspeakers_F";
-			atlOffset=120.03299;
+			atlOffset=66.579376;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -859,7 +872,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7322.0015,124.16724,7884.6479};
+				position[]={7322.0015,70.713623,7884.6479};
 				angles[]={0,2.3784428,0};
 			};
 			side="Empty";
@@ -870,7 +883,7 @@ class Mission
 			};
 			id=251;
 			type="Land_Net_Fence_8m_F";
-			atlOffset=118.76517;
+			atlOffset=65.311554;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -900,7 +913,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7316.2788,124.30256,7879.1011};
+				position[]={7316.2788,70.848953,7879.1011};
 				angles[]={0,2.3810246,0};
 			};
 			side="Empty";
@@ -911,7 +924,7 @@ class Mission
 			};
 			id=252;
 			type="Land_Net_Fence_8m_F";
-			atlOffset=118.9005;
+			atlOffset=65.446884;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1118,7 +1131,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7317.6929,126.69043,7877.9038};
+				position[]={7317.6929,73.236809,7877.9038};
 				angles[]={0,0.80833179,0};
 			};
 			side="Empty";
@@ -1129,7 +1142,7 @@ class Mission
 			};
 			id=293;
 			type="Land_LampHarbour_F";
-			atlOffset=119.14391;
+			atlOffset=65.690277;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1200,7 +1213,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7323.6675,129.90399,7869.604};
+				position[]={7323.6675,76.450371,7869.604};
 				angles[]={0,1.4292501,0};
 			};
 			side="Empty";
@@ -1211,7 +1224,7 @@ class Mission
 			};
 			id=315;
 			type="Land_dp_smallTank_F";
-			atlOffset=120.52866;
+			atlOffset=67.075043;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3187,6 +3200,57 @@ class Mission
 			};
 			id=407;
 			type="EmptyDetector";
+		};
+		class Item58
+		{
+			dataType="Marker";
+			position[]={4651.7021,1.6141747e+008,4813.7124};
+			name="mrk_dz";
+			text="DZ Lisa";
+			type="mil_end";
+			colorName="ColorBlue";
+			id=408;
+			atlOffset=1.6141733e+008;
+		};
+		class Item59
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7342.6172,5.6591659,7852.7241};
+				angles[]={0,1.5581079,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="halo";
+			};
+			id=409;
+			type="MapBoard_stratis_F";
+			atlOffset=117.487;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

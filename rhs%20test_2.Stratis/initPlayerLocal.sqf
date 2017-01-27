@@ -7,6 +7,20 @@ call TG_fnc_earplugs;
 //-------------------------------------------Group--------------------------------------------------------
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 
+//--------------------------------------------HALO addaction----------------------------------------------
+halo addAction
+[
+	"<t size='1' shadow='2' color='#ff0000'>HALO to DZ Lisa</t> <img size='2' color='#ff0000' shadow='1' image='\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa'/>", 
+	"call TG_fnc_halo", 
+	nil, 
+	5, 
+	true, 
+	true, 
+	"",
+	"alive _target"
+];
+
+
 //-----------------------------UAV start---------------------------------
 _color = EAST call BIS_fnc_sideColor;
 0 = [
