@@ -7,6 +7,7 @@ class TG
 		class squadUI {};
 		class earplugs {};
 		class drag {};
+		class halo {};
 	};
 	class server
 	{
