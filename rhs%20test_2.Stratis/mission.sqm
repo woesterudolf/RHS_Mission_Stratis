@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1093;
+		nextID=1110;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7419.4761,65.86554,8060.311};
-		dir[]={-0.42554307,-0.44237557,0.78948605};
-		up[]={-0.20990171,0.89682412,0.38942006};
-		aside[]={0.88029915,5.9604645e-008,0.47449252};
+		pos[]={7601.4565,53.818871,8115.0713};
+		dir[]={-0.62117577,-0.55723542,-0.55110425};
+		up[]={-0.4168767,0.8303116,-0.36985028};
+		aside[]={-0.66367769,9.0757385e-007,0.74806494};
 	};
 };
 binarizationWanted=0;
@@ -80,13 +80,14 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Structures_F_Heli_Ind_Airport",
 	"A3_Modules_F_Hc",
-	"rhsusf_vehicles"
+	"rhsusf_vehicles",
+	"rhsusf_c_markvsoc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=40;
+		items=41;
 		class Item0
 		{
 			className="rhsusf_c_m113";
@@ -363,6 +364,13 @@ class AddonsMetaData
 			className="rhsusf_vehicles";
 			name="rhsusf_vehicles";
 		};
+		class Item40
+		{
+			className="rhsusf_c_markvsoc";
+			name="Mark V SOC";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
 	};
 };
 randomSeed=14922911;
@@ -609,7 +617,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=592;
+		items=593;
 		class Item0
 		{
 			dataType="Object";
@@ -1033,7 +1041,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7449.3071,0.17703056,8117.5063};
+				position[]={7449.3071,0.45866537,8117.5063};
 				angles[]={0,3.4012539,0};
 			};
 			side="Empty";
@@ -1042,14 +1050,14 @@ class Mission
 			};
 			id=260;
 			type="I_C_Boat_Transport_02_F";
-			atlOffset=116.9914;
+			atlOffset=117.27303;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7454.5435,0.25209618,8115.835};
+				position[]={7454.5435,0.72694421,8115.835};
 				angles[]={0,3.4027007,0};
 			};
 			side="Empty";
@@ -1058,14 +1066,14 @@ class Mission
 			};
 			id=261;
 			type="I_C_Boat_Transport_02_F";
-			atlOffset=117.08;
+			atlOffset=117.55485;
 		};
 		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7458.23,0.18832016,8110.6709};
+				position[]={7458.23,0.78661031,8110.6709};
 				angles[]={0,3.4056609,0};
 			};
 			side="Empty";
@@ -1074,14 +1082,14 @@ class Mission
 			};
 			id=262;
 			type="I_C_Boat_Transport_02_F";
-			atlOffset=116.7224;
+			atlOffset=117.32069;
 		};
 		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7463.1284,0.33954692,8110.1401};
+				position[]={7463.1284,0.97718024,8110.1401};
 				angles[]={0,3.3816469,0};
 			};
 			side="Empty";
@@ -1090,14 +1098,14 @@ class Mission
 			};
 			id=263;
 			type="B_Boat_Transport_01_F";
-			atlOffset=116.93274;
+			atlOffset=117.57037;
 		};
 		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7466.5449,1.4284294,8109.3379};
+				position[]={7466.5449,0.95396507,8109.3379};
 				angles[]={0,3.3816469,0};
 			};
 			side="Empty";
@@ -1106,14 +1114,14 @@ class Mission
 			};
 			id=265;
 			type="B_Boat_Transport_01_F";
-			atlOffset=117.96415;
+			atlOffset=117.48969;
 		};
 		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7470.1597,0.68093181,8108.395};
+				position[]={7470.1597,1.2446525,8108.395};
 				angles[]={0,3.3816469,0};
 			};
 			side="Empty";
@@ -1122,7 +1130,7 @@ class Mission
 			};
 			id=266;
 			type="B_Boat_Transport_01_F";
-			atlOffset=117.13544;
+			atlOffset=117.69917;
 		};
 		class Item16
 		{
@@ -20051,6 +20059,7 @@ class Mission
 			};
 			id=999;
 			type="RHS_TU95MS_vvs_old";
+			atlOffset=0.0040869713;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20109,6 +20118,7 @@ class Mission
 			};
 			id=1000;
 			type="RHS_TU95MS_vvs_old";
+			atlOffset=0.0040869713;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23767,6 +23777,22 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item592
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7441.8154,1.9326411,8116.9033};
+				angles[]={0,3.5351033,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=1095;
+			type="rhsusf_mkvsoc";
+			atlOffset=116.29881;
 		};
 	};
 	class Connections
