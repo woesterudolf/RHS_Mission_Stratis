@@ -46,6 +46,7 @@ addons[]=
 	"rhs_c_heavyweapons",
 	"A3_Signs_F",
 	"A3_Supplies_F_Heli_Fuel",
+	"A3_Characters_F",
 	"A3_Structures_F_Walls",
 	"RHS_US_A2_AirImport",
 	"rhsusf_c_troops",
