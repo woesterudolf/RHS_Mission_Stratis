@@ -82,7 +82,7 @@ addons[]=
 	"rhs_c_bmd"
 	"A3_Modules_F_Hc",
 	"rhsusf_vehicles",
-	"rhsusf_c_markvsoc"
+	"rhsusf_c_markvsoc",
 };
 class AddonsMetaData
 {
