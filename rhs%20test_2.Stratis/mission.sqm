@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7601.4565,53.818871,8115.0713};
-		dir[]={-0.62117577,-0.55723542,-0.55110425};
-		up[]={-0.4168767,0.8303116,-0.36985028};
-		aside[]={-0.66367769,9.0757385e-007,0.74806494};
+		pos[]={7343.6963,66.56414,8108.9722};
+		dir[]={0.90011746,-0.37667969,0.21891743};
+		up[]={0.36601451,0.92634207,0.089018404};
+		aside[]={0.23632406,3.7252903e-009,-0.97168469};
 	};
 };
 binarizationWanted=0;
@@ -20059,7 +20059,7 @@ class Mission
 			};
 			id=999;
 			type="RHS_TU95MS_vvs_old";
-			atlOffset=0.0040869713;
+			atlOffset=0.013257504;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20118,7 +20118,7 @@ class Mission
 			};
 			id=1000;
 			type="RHS_TU95MS_vvs_old";
-			atlOffset=0.0040869713;
+			atlOffset=0.013257504;
 			class CustomAttributes
 			{
 				class Attribute0
