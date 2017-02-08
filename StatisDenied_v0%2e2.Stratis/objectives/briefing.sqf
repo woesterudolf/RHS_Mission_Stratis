@@ -87,7 +87,7 @@ http://www.tacticalgamer.com"
 "TG|Toptonic-Butler - name tag script.
 <br/>
 <br/>
-MadSoloSniper - TGBanner graphics.
+//MadSoloSniper - TGBanner graphics.
 <br/>
 <br/>
 Champ - View Distance script.
